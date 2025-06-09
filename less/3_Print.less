@@ -1,0 +1,198 @@
+/* ========================================================================== */
+/*                      打印特定样式 (Print Specific Styles)                   */
+/* ========================================================================== */
+@media print {
+      /* ========================================================================== */
+    /*                      控制字号 (font-size) - 打印 (pt)                     */
+    /* ========================================================================== */
+    // 基础转换参考: 16px ≈ 12pt, 14px ≈ 10.5pt or 10pt, 12px ≈ 9pt
+
+    @title_font_size_h1:            18pt;  // 原28px
+    @title_font_size_h2:            16pt;  // 原24px
+    @title_font_size_h3:            15pt;  // 原20px
+    @title_font_size_h4:            14pt;  // 原18px
+    @title_font_size_h5:            12pt;  // 原16px
+    @base_font_size:                10.5pt;  // 原16px - 12pt 是常见的正文打印字号
+
+    @code_inline_font_size:         9pt;  // 原14px
+    @code_block_font_size:          9pt;  // 原14px
+    @code_line_number_font_size:    @code_block_font_size; // 保持一致
+
+    @math_inline_font_size:         9pt;  // 原14px
+    @math_block_font_size:          9pt;  // 原14px
+    @table_header_font_size:        9pt;  // 原14px
+    @table_content_font_size:       9pt;  // 原14px
+
+    @caption_font_size:             10.5pt;  // 原16px，图注可以略小于正文
+    @footnote_font_size:            9pt;   // 原14px，脚注通常更小
+    @footnote_backref_font_size:    9pt;   // 原14px
+
+    @toc_font_size:                 10.5pt;  // 原16px，目录可以略小于正文或与正文同大
+    @toc_title_font_size:           @title_font_size_h3; // 保持与H3标题一致
+
+    @sidebar_toc_font_size:         9pt;  // 原14px (如果侧边栏打印的话)
+    @sidebar_toc_title_size:        @title_font_size_h3; // (如果侧边栏打印的话)
+
+    @list_font_size:                9pt;  // 原14px
+    @blockquote_font_size:          9pt;  // 原14px
+    @Admonition_title_font_size:    9pt;  // 原14px
+    @Admonition_content_font_size:  9pt;   // 原12px
+  // --- 重新定义文本颜色为打印友好型 ---
+    @base_text_color:              #000000;     // 正文：纯黑
+    @title_color:                  #000000;     // 标题：纯黑
+    @code_inline_font_color:       #000000;
+    @code_block_font_color:        #000000;
+    @code_line_number_font_color:  #888888;     // 行号：浅灰
+
+    @math_inline_color:            #000000;
+    @math_block_color:             #000000;
+
+    @table_header_text_color:      #000000;
+    @table_body_text_color:        #000000;
+    @caption_color:                #555555;     // 图注：中灰
+
+    @footnote_text_color:          #333333;     // 脚注：深灰
+    @footnote_backref_color:       #777777;
+
+    @link_font_color_base:         #000000;     // 链接：纯黑 (通常打印时会加下划线)
+    @link_font_color_link:         #000000;
+    @link_font_color_visited:      #000000;
+    // @link_font_color_hover:        #000000;  // 悬停在打印中无意义
+    // @link_font_color_active:       #000000;  // 激活在打印中无意义
+    // @link_font_color_focus:        #000000;   // 聚焦在打印中无意义
+
+    @toc_icon_color:               #777777;
+    @toc_icon_bullet_color:        #AAAAAA;
+    @toc_color:                    #000000;
+
+    @sidebar_text_color:           #000000;
+    @sidebar_icon_color:           #777777;
+
+    @list_color:                   #000000;
+    @blockquote_color:             #333333;
+    @strong_color:                 #000000;     // 加粗通常不需要额外颜色
+    @em_color:                     #000000;       // 斜体通常不需要额外颜色
+    @strike_color:                 #888888;     // 删除线颜色
+    @mark_color:                   #000000;     // 标记文字颜色 (背景会处理)
+
+    @Admonition_color_note:           #888888;       // 更柔的灰蓝
+    @Admonition_color_abstract:       #888888;       // 柔和紫
+    @Admonition_color_info:           #888888;       // 清新蓝
+    @Admonition_color_tip:            #888888;       // 偏薄荷绿
+    @Admonition_color_success:        #888888;       // 柔和成功绿
+    @Admonition_color_question:       #888888;       // 柔紫
+    @Admonition_color_warning:        #888888;       // 柔黄橙
+    @Admonition_color_caution:        #888888;      // 明橙色
+    @Admonition_color_attention:      #888888;       // 柔和焦橙
+    @Admonition_color_failure:        #888888;       // 柔红
+    @Admonition_color_danger:         #888888;       // 稍深红，保留警示感
+    @Admonition_color_bug:            #888888;       // 紫红偏粉
+    @Admonition_color_example:        #888888;       // 明亮蓝，示例色
+    @Admonition_color_quote:          #888888;       // 柔灰蓝，适合引文背景
+
+    // --- 重新定义背景颜色为打印友好型 ---
+    @html_bg_color:              #FFFFFF;       // 页面背景：纯白
+    @base_bg_color:              #FFFFFF;       // 内容区域：纯白
+
+    @code_inline_bg_color:       transparent;  // 行内代码背景：透明 (或极浅灰)
+    @code_block_bg_color:        transparent;  // 代码块背景：透明 (或极浅灰)
+
+    @math_inline_bg_color:       transparent;
+    @math_block_bg_color:        transparent;
+
+    @table_header_bg_color:      transparent;  // 表头背景：透明 (靠边框和字体区分)
+    @table_body_bg_color:        #FFFFFF;
+
+    @caption_bg_color:           transparent;
+
+    @blockquote_bg_color:        transparent;  // 引用背景：透明 (靠边框区分)
+    @mark_bg_color:              transparent;  // 标记背景：透明 (文字已是黑色)
+
+    @toc_bg_color:               #FFFFFF;
+    @sidebar_bg_color:           #FFFFFF;       // 侧边栏背景：纯白
+
+    // @link_bg_hover:              transparent; // 悬停在打印中无意义
+
+    // --- 重新定义边框颜色为打印友好型 ---
+    // (你之前的 "PRINT MODE" 版本已经将边框颜色改为灰度了，这里是确保它们被应用)
+    @base_border_color_print:    #555555; // 假设这是你的打印边框基色
+    @base_border:                1px solid @base_border_color_print;
+    @toc_border:                 @base_border;
+    @hr_border_color_print:      #888888;
+    @hr_footnote_border_color_print: #AAAAAA;
+    @hr_border:                  double 1px solid @hr_border_color_print;
+    @hr_footnote_border:         1px solid @hr_footnote_border_color_print;
+
+    @table_border_color:         #AAAAAA;
+
+    @Admonition_border_color_print: #555555;
+    @Admonition_color_note:      @Admonition_border_color_print;
+    // ... 其他 Admonition 颜色也设为 Admonition_border_color_print ...
+    @Admonition_color_quote:     @Admonition_border_color_print;
+
+    @hr_color:                   @hr_border_color_print;
+    @hr_footnote_color:          @hr_footnote_border_color_print;
+
+    /* ---- 应用这些变量的CSS规则 ---- */
+    body {
+        color: @base_text_color;
+        background-color: @html_bg_color;
+        // -webkit-print-color-adjust: exact; /* 强制打印背景色和图片，谨慎使用 */
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: @title_color;
+    }
+
+    a, a:link, a:visited {
+        color: @link_font_color_link;
+        text-decoration: underline; /* 打印时通常给链接加下划线 */
+    }
+
+    code, pre {
+        background-color: @code_block_bg_color;
+        color: @code_block_font_color;
+        // border: 1px solid #DDDDDD; /* 可选：给代码块加浅色边框 */
+    }
+
+    .code-line-number {
+        color: @code_line_number_font_color;
+    }
+
+    blockquote {
+        color: @blockquote_color;
+        background-color: @blockquote_bg_color;
+    }
+
+    table {
+        border-color: @table_border_color;
+    }
+    th {
+        background-color: @table_header_bg_color;
+        color: @table_header_text_color;
+    }
+    td {
+        background-color: @table_body_bg_color;
+        color: @table_body_text_color;
+    }
+
+    mark {
+        background-color: @mark_bg_color;
+        color: @mark_color;
+    }
+
+    hr {
+        border-top-color: @hr_color; /* 取决于你的 hr_border 定义 */
+    }
+
+    /* 隐藏不需要打印的元素 */
+    nav, footer, .no-print, .sidebar { /* 假设侧边栏也不打印 */
+        display: none !important;
+    }
+
+    /* 确保图片不会溢出页面 */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}

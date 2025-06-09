@@ -1,0 +1,602 @@
+/* ========================================================================== */
+/*                                  非 MPE 渲染区                                 */
+/* ========================================================================== */
+// ==== HTML 背景色 ====
+html, body {
+    background-color: @html_bg_color !important;           // 外部背景色
+    justify-content: center !important;
+    display: flex !important;
+    margin: @layout_margin;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 0;
+    margin: 0;
+}
+
+
+// ==== 去除 MPE 渲染出来的空白页面 ====
+.crossnote.markdown-preview.fixed.top-0.left-0,
+.crossnote.markdown-preview.hidden-preview.invisible {
+    display: none !important;
+}
+
+/* ========================================================================== */
+/*                            MPE 渲染区域样式                                 */
+/* ========================================================================== */
+.markdown-preview.markdown-preview {
+
+    /* ====================== 1 基础样式 ====================== */
+    background-color: @base_bg_color;                      // 背景颜色（容器底色）
+    min-height: 100vh;                                     // 页面满屏高度
+    box-sizing: border-box;                                // 防止 padding 撑宽
+    max-width: @layout_max_width;                          // 页面最大宽度
+    min-width: @layout_min_width;                          // 页面最小宽度
+    margin: @layout_margin !important;                                 // 页面边缘间距
+    padding: @layout_padding !important;                     // 页面内容内边距
+    position: relative !important;                         // 兼容定位布局
+    left: auto !important;                                 // 保证正常流
+    transform: none !important;                            // 取消变换
+    scroll-behavior: smooth;                               // 平滑滚动体验
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // 字体抗锯齿增强
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* ====================== 2 基础段落 ====================== */
+    p {
+        font-family: @base_font;                           // 正文字体
+        font-size: @base_font_size;                        // 字号
+        font-weight: @base_font_weight;                    // 字重
+        font-style: normal;                                // 常规体
+        line-height: @base_line_height;                    // 行高
+        text-indent: @base_text_indent;                    // 首行缩进
+        margin: @base_paragraph_spacing;                   // 段落上下间距
+        color: @base_text_color;                           // 文字颜色
+        text-align: @base_text_align;                      // 两端对齐
+        letter-spacing: @base_letter_spacing;              // 字母间距
+        word-spacing: @base_word_spacing;                  // 单词间距
+        overflow-wrap: break-word;                         // 英文强制断行
+    }
+
+    /* ====================== 3 标题 ====================== */
+    h1, h2, h3, h4, h5 {
+        font-family: @title_font;                          // 标题字体
+        font-weight: @title_font_weight;                   // 标题字重
+        color: @title_color;                               // 标题颜色
+        line-height: @title_line_height;                   // 标题行高
+        margin: @title_margin;                             // 标题通用上下边距
+    }
+
+    h1 {
+        font-size: @title_font_size_h1;                    // H1 字号
+        text-align: @title_text_align_h1;                  // 居中对齐
+        margin-top: @title_margin_h1_top;                  // H1 上间距
+        margin-bottom: @title_margin_h1_bottom;            // H1 下间距
+    }
+    h2 { font-size: @title_font_size_h2; }                 // H2 字号
+    h3 { font-size: @title_font_size_h3; }                 // H3 字号
+    h4 { font-size: @title_font_size_h4; }                 // H4 字号
+    h5 { font-size: @title_font_size_h5; }                 // H5 字号
+
+    /* ============================ 4 代码 ============================== */
+
+    /* ==== 行内代码: <p>段落中的<code>行内代码</code> ==== */
+    p code {
+        font-family:        @code_inline_font;
+        font-size:          @code_inline_font_size;
+        font-weight:        @code_inline_font_weight;
+        line-height:        @code_inline_line_height;
+        background-color:   @code_inline_bg_color;
+        color:              @code_inline_font_color;
+        border-radius:      @code_inline_border_radius;
+        padding:            @code_inline_padding;
+        white-space:        nowrap; // 保留，适合行内代码
+    }
+    pre[data-role="codeBlock"] {
+        font-family:        @code_block_font;
+        font-size:          @code_block_font_size;
+        font-weight:        @code_block_font_weight;
+        line-height:        @code_block_line_height;
+        color:              @code_block_font_color;
+        background-color:   @code_block_bg_color;
+        border-radius:      @code_block_border_radius;
+        padding:            @code_block_padding;
+        overflow-x:         auto;
+        position:           relative;
+        white-space:        pre;
+    }
+
+    pre[data-role="codeBlock"] code {
+        font-family:        inherit;
+        font-size:          inherit;
+        font-weight:        inherit;
+        line-height:        inherit;
+        color:              inherit;
+        background:         none;
+        margin:             0;
+        white-space:        inherit;
+    }
+
+    .line-numbers .line-numbers-rows {
+        position: absolute;
+        top: 0.8em;
+        left: 0;
+        width: 2.5em;
+        user-select: none;
+        pointer-events: none;
+        border-right: 1px solid #131212;
+    }
+
+    .line-numbers .line-numbers-rows > span::before {
+        display: block;
+        text-align: left;
+        padding-left: 0.8em;
+        font-family: @code_line_number_font;
+        font-size: @code_line_number_font_size;
+        line-height: @code_line_number_line_height;
+        color: @code_line_number_font_color;
+    }
+/* ============================== Todo 6 公式 ============================== */
+    /* === 行内公式 === */
+    span.mathjax-exps {
+        font-family:        @math_inline_font;
+        font-size:          @math_inline_font_size !important;
+        line-height:        @math_inline_line_height;
+        text-indent:        0em;
+        color:              @math_inline_color;
+        background-color:   @math_inline_bg_color;
+        padding:            @math_inline_padding;
+        border-radius:      @math_inline_border_radius;
+        display:            inline-block;
+        vertical-align:     middle;
+        word-spacing:       0;
+        letter-spacing:     0;
+        white-space:        nowrap;
+    }
+
+    /* === 块级公式样式（MathJax）=== */
+    mjx-container[jax="CHTML"][display="true"] {
+        font-family:        @math_block_font;
+        font-size:          @math_block_font_size;
+        line-height:        @math_block_line_height;
+        color:              @math_block_color;
+        background-color:   @math_block_bg_color;
+        padding:            @math_block_padding;
+        margin:             @math_block_margin;
+        border-radius:      @math_block_border_radius;
+        text-align:         center;
+        display:            block;
+        overflow-x:         visible;
+        box-sizing:         border-box;
+    }
+/* ============================== Todo 7 表格 ============================== */
+    /* === 表格基础样式 === */
+    table {
+        table-layout: fixed;
+        border-collapse: collapse;                             // 共享边框
+        width: @table_width;                                   // 表格宽度
+        margin: @table_margin;                                 // 表格上下间距
+        text-align: center;                                    // 文本居中
+        border-spacing: 0;                                     // 清除单元格间距
+        border: none;
+        margin-left: auto;
+        margin-right: auto;
+        justify-self: center;
+    }
+
+    /* === 表头样式 === */
+    table thead tr th {
+        font-family:        @table_header_font;                // 表头字体
+        font-weight:        @table_header_font_weight;         // 字重
+        font-size:          @table_header_font_size;                           // 表格字号
+        line-height: @table_header_line_height;
+        padding:            @table_cell_padding;               // 内边距
+        border-top:         @table_border_bold solid @table_border_color; // 顶部粗边框（第一线）
+        border-bottom:      @table_border_thin solid @table_border_color; // 表头底边（第二线）
+        border-left:        none;
+        border-right: none;
+        background-color:   @table_header_bg_color;            // 表头背景
+        color:              @table_header_text_color;          // 表头文字颜色
+        word-wrap: break-word;
+    }
+
+    /* === 表体样式 === */
+    table tbody tr td {
+        font-family:        @table_body_font;                  // 表体字体
+        font-size:          @table_content_font_size;                           // 表格字号
+        font-weight:        @table_body_font_weight;
+        line-height: @table_body_line_height;
+        background-color:   @table_body_bg_color;
+        color:              @table_body_text_color;
+        padding:            @table_cell_padding;
+        border: none;  // 关键：取消默认边框
+    }
+
+    /* === 表体最后一行（第三线） === */
+    table tbody tr:last-child td {
+        border-bottom:      @table_border_bold solid @table_border_color !important;
+    }
+/* ============================== Todo 8 列表 ============================== */
+    li {
+    margin-bottom: 0.4em; /* 列表项之间的垂直间距 */
+    font-family: @list_font !important;
+    line-height: @list_line_height;
+    color: @list_color;
+    }
+
+    ol, ul {
+    padding-left: @list_padding_left !important;
+    }
+    ol > li,
+    ul > li {
+    font-size: @list_font_size;
+    }
+    // 第二层嵌套
+    ol > li > ol,
+    ol > li > ul,
+    ul > li > ol,
+    ul > li > ul {
+    padding-left: (@list_padding_left + 1);
+    }
+
+    ol > li > ol > li,
+    ol > li > ul > li,
+    ul > li > ol > li,
+    ul > li > ul > li {
+    font-size: (@list_font_size - 1);
+    }
+
+    // 第三层嵌套
+    ol > li > ol > li > ol,
+    ol > li > ol > li > ul,
+    ol > li > ul > li > ol,
+    ol > li > ul > li > ul,
+    ul > li > ol > li > ol,
+    ul > li > ol > li > ul,
+    ul > li > ul > li > ol,
+    ul > li > ul > li > ul {
+    padding-left: (@list_padding_left + 2);
+    }
+
+    ol > li > ol > li > ol > li,
+    ol > li > ol > li > ul > li,
+    ol > li > ul > li > ol > li,
+    ol > li > ul > li > ul > li,
+    ul > li > ol > li > ol > li,
+    ul > li > ol > li > ul > li,
+    ul > li > ul > li > ol > li,
+    ul > li > ul > li > ul > li {
+    font-size: (@list_font_size - 2);
+    }
+
+
+/* ============================== Todo 9 图片 ============================== */
+    figure {
+        margin:        @figure_margin;                  // 图片容器上下外边距
+        text-align:    @figure_text_align;              // 图片及图注内容居中
+
+        img {
+            max-width:   @image_max_width;                // 图片最大宽度不超过父容器
+            height:      @image_height_auto;              // 高度自适应
+            display:     @image_display;                  // 块级显示
+            margin:      @image_margin;                   // 水平居中
+        }
+
+        figcaption {
+            font-family:     @caption_font;               // 图注字体
+            font-size:       @caption_font_size;          // 字号
+            color:           @caption_color;              // 颜色
+            line-height:     @caption_line_height;        // 行高
+            background-color:@caption_bg_color;           // 背景色
+
+            display:         inline-block;                // 宽度适应图像
+            max-width:       100%;
+            margin:          0 auto;
+            margin-top:      @caption_margin_top;         // 与图片间距
+            padding:         @caption_padding;            // 内边距
+            text-align:      center;
+        }
+    }
+
+/* ============================== Todo 10 Admonition ============================== */
+
+    .admonition {
+        background-color: transparent;
+        padding: 0;
+        border-radius: 6px;
+        margin: 0.5em 0 1em 0;
+        overflow: hidden;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+
+        .admonition-title {
+            font-family: @Admonition_title_font;
+            font-weight: @Admonition_title_font_weight;
+            text-indent: @Admonition_text_indent;
+            padding: 0.5em 0.5em;
+            padding-left: 5em;
+            font-size: @Admonition_title_font_size;
+            line-height:@Admonition_title_line_height;
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            &::before {
+                content: ""; // 默认无图标，由 mixin 设置
+                font-size: inherit;
+                line-height: inherit;
+                font-family: @emoji_font;
+                position: absolute;
+                left: 0.8em;
+                top: 50%;
+                transform: translateY(-50%);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 8px;
+            }
+        }
+
+        p {
+            font-family: @Admonition_content_font;
+            font-size: @Admonition_content_font_size;
+            font-weight: @Admonition_content_font_weight;
+            line-height: @Admonition_content_line_height;
+            text-indent: 0em;
+            padding: 1em;
+            margin: 0;
+            &:first-child {
+                margin-top: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    /* ======================== Mixin 定义：为不同类型生成样式 ======================== */
+    .generateAdmonition(
+        @type,
+        @borderColor,
+        @icon,
+        @title_color: lighten(@borderColor, 40%),
+        @title_bg_color: @borderColor,
+        @content_color: darken(@borderColor, 10%),
+        @content_bg_color: lighten(@borderColor, 40%)
+    ) {
+        .admonition.@{type} {
+            border-left: 5px solid @borderColor !important;
+
+            > .admonition-title {
+                color: @title_color !important;
+                background-color: @title_bg_color !important;
+
+                &::before {
+                    content: "@{icon}";
+                    margin-right: 0.5em;
+                    padding-left: 1em;
+                }
+            }
+
+            > *:not(.admonition-title) {
+                color: @content_color !important;
+                background-color: @content_bg_color !important;
+                padding: 0.8em 1em;
+                margin: 0;
+            }
+        }
+    }
+
+    /* =================================== 提示块 批量生成样式 ================================== */
+    // 使用 .is-type 风格的 class
+    .generateAdmonition(note,      @Admonition_color_note,      @Admonition_content_note);
+    .generateAdmonition(abstract,  @Admonition_color_abstract,  @Admonition_content_abstract);
+    .generateAdmonition(info,      @Admonition_color_info,      @Admonition_content_info);
+    .generateAdmonition(tip,       @Admonition_color_tip,       @Admonition_content_tip);
+    .generateAdmonition(success,   @Admonition_color_success,   @Admonition_content_success);
+    .generateAdmonition(question,  @Admonition_color_question,  @Admonition_content_question);
+    .generateAdmonition(warning,   @Admonition_color_warning,   @Admonition_content_warning);
+    .generateAdmonition(caution,   @Admonition_color_caution,   @Admonition_content_caution);
+    .generateAdmonition(attention, @Admonition_color_attention, @Admonition_content_attention);
+    .generateAdmonition(failure,   @Admonition_color_failure,   @Admonition_content_failure);
+    .generateAdmonition(danger,    @Admonition_color_danger,    @Admonition_content_danger);
+    .generateAdmonition(bug,       @Admonition_color_bug,       @Admonition_content_bug);
+    .generateAdmonition(example,   @Admonition_color_example,   @Admonition_content_example);
+    .generateAdmonition(quote,     @Admonition_color_quote,     @Admonition_content_quote);
+
+/* ============================== Todo 11 脚注 ============================== */
+/* ===== 脚注整体容器及所有子元素统一字体和颜色 ===== */
+    .footnotes,
+    .footnotes * {
+        font-family:     @footnote_font;
+        font-size:       @footnote_font_size;
+        line-height:     @footnote_line_height;
+        color:           @footnote_text_color;
+        text-indent:     0em !important;
+    }
+
+    /* ===== 脚注容器本身样式 ===== */
+    .footnotes {
+        margin-top:      @footnote_margin_top;
+        padding:         @footnote_padding;
+    }
+
+    /* ===== 脚注编号列表（ol） ===== */
+    .footnotes-list {
+        list-style-type: decimal;
+        margin-left:     @footnote_list_indent;
+        padding-left:    @footnote_list_padding;
+    }
+
+    /* ===== 脚注条目之间的间距 ===== */
+    .footnote-item {
+        margin-bottom:   @footnote_item_margin_bottom;
+    }
+
+    /* ===== 脚注回跳链接（↩︎）样式 ===== */
+    .footnote-backref {
+        font-size:       @footnote_backref_font_size !important;
+        margin-left:     @footnote_backref_margin;
+        color:           @footnote_backref_color !important;
+        text-decoration: none;
+        vertical-align:  baseline;
+        cursor:          pointer;
+        opacity:         @footnote_backref_opacity;
+        transition:      opacity 0.2s;
+    }
+
+    /* ===== 悬停时的回跳链接样式 ===== */
+    .footnote-backref:hover {
+        opacity:         @footnote_backref_hover_opacity;
+        text-decoration: underline;
+    }
+
+/* ============================== Todo 14 补充 ============================== */
+
+/* 粗体 strong */
+    strong {
+        color: @strong_color;
+        font-weight: @strong_font_weight;
+        padding: 0 2px;
+        text-indent: 0em !important;
+    }
+
+    /* 斜体 em */
+    em {
+        color:@em_color;
+        font-style: italic;
+        padding: 0 2px;
+        text-indent: 0em !important;
+    }
+
+    /* 删除线 s 或 del */
+    s, del {
+        color: @strike_color;
+        text-decoration: @strike_decoration;
+        text-indent: 0em !important;
+    }
+
+    /* 高亮 mark (MPE 支持 ==高亮== 转 mark) */
+    mark {
+        background-color: @mark_bg_color;
+        color: @mark_color;
+        padding: 0 2px;
+        text-indent: 0em !important;
+    }
+
+/* =================================== 分割线 ================================== */
+    hr:not(.footnotes-sep) {
+        color: @hr_color;
+        border: double;
+        border-width: 3px 5px;
+        border-left: none;
+        border-right: none;
+        height: 1px;
+        overflow: visible;
+        margin-left: 20px;
+        margin-right: 20px;
+        position: relative;
+        background-color: transparent;
+
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-width: 0 3px 3px 0;
+            border-style: double;
+            top: -3px;
+            background: radial-gradient(2px at 1px 1px, currentColor 2px, transparent 0) no-repeat;
+        }
+        &:before {
+            transform: rotate(-45deg);
+            left: -20px;
+        }
+
+        &:after {
+            transform: rotate(135deg);
+            right: -20px;
+        }
+    }
+
+    hr.footnotes-sep {
+        border-top: @hr_footnote_border;
+        color: @hr_footnote_color;
+    }
+
+/* =================================== 引用 =================================== */
+    blockquote {
+        margin: @blockquote_margin !important;
+        padding: @blockquote_padding !important;
+        border-radius: @blockquote_border_radius !important;
+        background-color: @blockquote_bg_color !important;
+        font-family: @blockquote_font;
+        font-size:@blockquote_font_size;
+        color: @blockquote_color;
+        line-height: @blockquote_line_height;
+        white-space: normal;
+    }
+
+    blockquote p {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: none !important;
+        border: none !important;
+        text-indent: 0em !important;
+        font-family: inherit !important;
+}
+
+}
+
+/* =================================== 超链接 ================================== */
+
+    a {
+        font-size:      inherit;
+        font-weight:    inherit;
+        line-height:    inherit;
+        color:          @link_font_color_base;
+        text-decoration: none;
+        transition:     all 0.2s ease;
+
+        // 未访问链接
+        &:link {
+            color: @link_font_color_link;
+        }
+
+        // 已访问链接
+        &:visited {
+            color: @link_font_color_visited;
+        }
+
+        // 鼠标悬停
+        &:hover {
+            color:              @link_font_color_hover;
+            text-decoration:    underline;
+            background-color:   @link_bg_hover;
+            border-radius:      @link_radius;
+        }
+
+        // 点击时
+        &:active {
+            color:              @link_font_color_active;
+            text-decoration:    underline;
+        }
+
+        // 聚焦（鼠标点击、键盘 Tab）
+        &:focus {
+            outline:            none;
+            box-shadow:         @link_focus_box_shadow;
+            border-radius:      @link_radius;
+        }
+
+        // 聚焦可视（仅键盘操作时）
+        &:focus-visible {
+            outline:            @link_focus_outline;
+            outline-offset:     @link_focus_outline_offset;
+    }
+}

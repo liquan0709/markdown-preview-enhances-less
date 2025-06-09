@@ -1,0 +1,340 @@
+/* ========================================================================== */
+/*                                  字体导入 (Font Imports)                   */
+/* ========================================================================== */
+@import url("https://fontsapi.zeoseven.com/2/main/result.css");
+@import url("https://fontsapi.zeoseven.com/185/main/result.css");
+@import url("https://fontsapi.zeoseven.com/94/main/result.css");
+@import url("https://fontsapi.zeoseven.com/488/main/result.css");
+@import url("https://fontsapi.zeoseven.com/442/main/result.css");
+@import url("https://fontsapi.zeoseven.com/22/main/result.css");
+
+/* ========================================================================== */
+/*                      控制字体族 (font-family)                               */
+/* ========================================================================== */
+
+@base_font:                       'LXGW Neo ZhiSong';
+@title_font:                      "LXGW 975 Gothic";
+@math_font:                       "Libertinus Math";
+@code_font:                       "Maple Mono NF CN", "LXGW WenKai Mono GB";
+@comment_font:                    "STDongGuanTi";
+@emoji_font:                      "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+
+@code_inline_font:                @code_font;
+@code_block_font:                 @code_font;
+@code_line_number_font:           @code_font;
+@math_inline_font:                @math_font;
+@math_block_font:                 @math_font;
+@table_header_font:               @title_font;
+@table_body_font:                 @base_font;
+@caption_font:                    @title_font;
+@footnote_font:                   @comment_font;
+@toc_font:                        @base_font;
+@list_font:                       @comment_font;
+@blockquote_font:                 @comment_font;
+@Admonition_title_font:           @title_font;
+@Admonition_content_font:         @base_font;
+
+/* ========================================================================== */
+/*                      控制字号 (font-size)                                 */
+/* ========================================================================== */
+@title_font_size_h1:              28px;
+@title_font_size_h2:              24px;
+@title_font_size_h3:              20px;
+@title_font_size_h4:              18px;
+@title_font_size_h5:              16px;
+@base_font_size:                  16px;
+
+@code_inline_font_size:           14px;
+@code_block_font_size:            14px;
+@code_line_number_font_size:      @code_block_font_size;
+
+@math_inline_font_size:           14px;
+@math_block_font_size:            14px;
+@table_header_font_size:          14px;
+@table_content_font_size:         14px;
+
+@caption_font_size:               16px;
+@footnote_font_size:              14px;
+@footnote_backref_font_size:      14px;
+
+@toc_font_size:                   16px;
+@toc_title_font_size:             @title_font_size_h3;
+
+@sidebar_toc_font_size:           14px;
+@sidebar_toc_title_size:          @title_font_size_h3;
+
+@list_font_size:                  14px;
+@blockquote_font_size:            14px;
+@Admonition_title_font_size:      14px;
+@Admonition_content_font_size:    12px;
+
+/* ========================================================================== */
+/*                      控制字重 (font-weight)                               */
+/* ========================================================================== */
+@base_font_weight:                normal;
+@title_font_weight:               bold;
+@code_inline_font_weight:         normal;
+@code_block_font_weight:          normal;
+@code_line_number_font_weight:    normal;
+@math_inline_font_weight:         normal;
+@math_block_font_weight:          normal;
+@table_header_font_weight:        bold;
+@table_body_font_weight:          normal;
+@Admonition_title_font_weight:    bold;
+@Admonition_content_font_weight:  normal;
+@strong_font_weight:              bold;
+
+/* ========================================================================== */
+/*                      控制行高 (line-height)                               */
+/* ========================================================================== */
+@base_line_height:                1.6;
+@title_line_height:               1.4;
+@code_inline_line_height:         @base_line_height;
+@code_block_line_height:          1.4;
+@code_line_number_line_height:    @code_block_line_height;
+@math_inline_line_height:         @base_line_height;
+@math_block_line_height:          @code_block_line_height;
+@caption_line_height:             @base_line_height;
+@footnote_line_height:            1.5;
+@toc_line_height:                 @title_line_height;
+@list_line_height:                1.5;
+@blockquote_line_height:          1.3;
+@Admonition_title_line_height:    1.3;
+@Admonition_content_line_height:  1.2;
+@table_header_line_height:        1.5;
+@table_body_line_height:          1.2;
+
+/* ========================================================================== */
+/*                      控制文本颜色 (color) - Dark Mode                      */
+/* ========================================================================== */
+@base_text_color:              #E0E0E0;     // 正文主色：浅灰，适应深色背景
+@title_color:                  #A8DADC;     // 标题色：明亮青蓝，与深背景形成对比
+@code_inline_font_color:       #D0D0D0;     // 行内代码：比正文略浅，突出
+@code_block_font_color:        @code_inline_font_color;
+@code_line_number_font_color:  #777777;     // 行号：中灰，不干扰代码阅读
+
+@math_inline_color:            #E5E5E5;     // 数学公式：接近正文色
+@math_block_color:             @math_inline_color;
+
+@table_header_text_color:      #F0F0F0;     // 表头文字：更亮
+@table_body_text_color:        @base_text_color; // 表格正文：保持统一
+@caption_color:                #AAAAAA;     // 图注：浅灰，降低视觉优先级
+
+@footnote_text_color:          #BDBDBD;     // 脚注正文：微弱层次
+@footnote_backref_color:       #9E9E9E;     // 返回链接：更暗一些的浅灰
+
+@link_font_color_base:         #82AAFF;     // 正常链接：明亮蓝
+@link_font_color_link:         #64B5F6;     // 链接蓝色：鲜明
+@link_font_color_visited:      #A1887F;     // 已访问：浅棕灰
+@link_font_color_hover:        #FFD54F;     // 悬停：亮黄，醒目
+@link_font_color_active:       #FF8A80;     // 激活：亮红
+@link_font_color_focus:        #80CBC4;     // 聚焦：青蓝
+
+@toc_icon_color:               #888888;     // 目录图标：中灰
+@toc_icon_bullet_color:        #AAAAAA;
+@toc_color:                    @title_color;
+
+@sidebar_text_color:           #F2F2F2;
+@sidebar_icon_color:           #888888;
+
+@list_color:                   @base_text_color; // 列表项主色
+@blockquote_color:             #BEB3A3;     // 引用文字：浅米灰
+@strong_color:                 #FFAB91;     // 加粗：柔和亮橙
+@em_color:                     #90CAF9;     // 斜体：明亮浅蓝
+@strike_color:                 #999999;     // 删除线：中灰
+@mark_color:                   #111111;     // 标记文字：深色，确保在浅色标记背景上可读
+
+/* ========================================================================== */
+/*                      控制背景颜色 (background-color) - Dark Mode           */
+/* ========================================================================== */
+@html_bg_color:              #1A1A1A;       // 页面整体底色：深邃黑灰
+@base_bg_color:              darken(@html_bg_color, -6%); // 内容区域：比页面底色略亮一点的深灰 #2C2C2C
+                                          // lighten(#1A1A1A, 6%) would be #252525. Let's use a fixed value.
+                                          // Using a slightly lighter variant for content area.
+                                          // Example: @base_bg_color: #242424;
+                                          // Or, using lighten: @base_bg_color: lighten(@html_bg_color, 5%); // results in #232323
+                                          // For better distinction:
+@base_bg_color:              #2C2C2C;       // 内容区域：较深灰，与页面底色区分
+
+@code_inline_bg_color:       #333333;       // 行内代码背景：深灰，与内容区域区分
+@code_block_bg_color:        @code_inline_bg_color; // 代码块背景：与行内一致
+
+@math_inline_bg_color:       #282828;       // 行内公式：更深的灰色，与代码块区分
+@math_block_bg_color:        @math_inline_bg_color; // 公式块：与行内一致
+
+@table_header_bg_color:      #3D3D3D;       // 表头：深灰，与表格内容区分
+@table_body_bg_color:        #252525;       // 表格正文：比内容区略深的灰
+
+@caption_bg_color:           transparent;   // 图注：透明，继承背景
+
+@blockquote_bg_color:        #3A3030;       // 引用背景：深棕灰
+@mark_bg_color:              #FFFACD;       // 标记背景：柠檬雪纺色 (浅黄), 在深色背景上突出
+
+@toc_bg_color:               @html_bg_color; // 目录背景：与页面一致
+@sidebar_bg_color:           #010B40;       // 侧边栏背景：深紫灰
+@link_bg_hover:              fade(#FFF3CD, 15%); // 链接悬停背景：浅黄色半透明
+
+/* ========================================================================== */
+/*                      控制内边距 (padding)                                 */
+/* ========================================================================== */
+@base_padding:                    1.2em 1.5em;
+@base_inline_padding:             0.2px 0.2px;
+@base_block_padding:              0.8em 1em;
+@layout_padding:                  2em 3em 2em 3em;
+@code_inline_padding:             @base_inline_padding;
+@code_block_padding:              0.8em 0em 0.8em 3em;
+@math_inline_padding:             @base_inline_padding;
+@math_block_padding:              @base_block_padding;
+@table_cell_padding:              6px 6px;
+@caption_padding:                 0.5em 1em;
+@footnote_padding:                0;
+@footnote_list_padding:           0;
+@blockquote_padding:              0.8em 1em 0.8em 1.5em;
+
+/* ========================================================================== */
+/*                      控制外边距 (margin)                                  */
+/* ========================================================================== */
+@base_margin:                     1.5em 0;
+@base_block_margin:               1.5em auto;
+@base_paragraph_spacing:          0.5em 0;
+@layout_margin:                   3em 30em 2em auto;
+@layout_block_spacing:            2em;
+@title_margin:                    @base_margin;
+@title_margin_h1_top:             3em;
+@title_margin_h1_bottom:          3em;
+@code_block_margin:               @base_block_margin;
+@math_block_margin:               @base_block_margin;
+@table_margin:                    @base_margin;
+@figure_margin:                   @base_margin;
+@image_margin:                    0 auto;
+@caption_margin_top:              0.5em;
+@footnote_margin_top:             0em;
+@footnote_item_margin_bottom:     0.6em;
+@footnote_backref_margin:         0.5em;
+@toc_margin:                      @base_margin;
+@blockquote_margin:               @base_margin;
+
+/* ========================================================================== */
+/*                      控制边框 (border, border-radius, border-color) - Dark Mode */
+/* ========================================================================== */
+// Border (shorthand or style/width)
+@base_border:                     1px solid #555555; // 中灰边框
+@toc_border:                      @base_border;
+@hr_border:                       double 1px solid @hr_color;
+@hr_footnote_border:              1px solid @hr_footnote_color;
+@link_focus_outline:              2px dashed @link_font_color_focus; // Outline is border-like
+
+// Border Radius
+@base_border_radius:              4px;
+@base_inline_border_radius:       4px;
+@base_block_border_radius:        4px;
+@code_inline_border_radius:       @base_inline_border_radius;
+@code_block_border_radius:        @base_block_border_radius;
+@math_inline_border_radius:       @base_inline_border_radius;
+@math_block_border_radius:        @base_block_border_radius;
+@link_radius:                     4px;
+@blockquote_border_radius:        4px;
+
+// Border Color (specific)
+@table_border_color:              #4D4D4D;       // 深灰表格边框
+
+// Admonition colors are generally kept bright for emphasis, ensure they are readable
+@Admonition_color_note:           #B0B8C0;       // 亮灰蓝
+@Admonition_color_abstract:       #CE93D8;       // 柔和亮紫
+@Admonition_color_info:           #81D4FA;       // 清新亮蓝
+@Admonition_color_tip:            #A5D6A7;       // 偏薄荷亮绿
+@Admonition_color_success:        #81C784;       // 柔和成功亮绿
+@Admonition_color_question:       #B39DDB;       // 柔亮紫
+@Admonition_color_warning:        #FFCC80;       // 柔亮黄橙
+@Admonition_color_caution:        #FFAB91;       // 明亮橙色
+@Admonition_color_attention:      #FF8A65;       // 柔和焦亮橙
+@Admonition_color_failure:        #EF9A9A;       // 柔亮红
+@Admonition_color_danger:         #E57373;       // 稍深亮红，保留警示感
+@Admonition_color_bug:            #F48FB1;       // 紫红偏亮粉
+@Admonition_color_example:        #90CAF9;       // 明亮蓝，示例色
+@Admonition_color_quote:          #B0BEC5;       // 柔亮灰蓝，适合引文背景
+
+@hr_color:                        #444444;       // 深灰分割线
+@hr_footnote_color:               #555555;       // 脚注分割线，中灰
+
+// Border Width (specific)
+@table_border_thin:               1px;
+@table_border_bold:               2px;
+
+/* ========================================================================== */
+/*                      控制尺寸 (width, height, max-width, min-width)       */
+/* ========================================================================== */
+@layout_max_width:                800px;
+@layout_min_width:                600px;
+@table_width:                     100%;
+@image_max_width:                 100%;
+@image_height_auto:               auto;   // Controls height property
+@sidebar_width:                   400px;
+
+/* ========================================================================== */
+/*                      控制文本排版 (text-align, text-indent, etc.)           */
+/* ========================================================================== */
+// Text Align
+@base_text_align:                 justify;
+@title_text_align_h1:             center;
+@figure_text_align:               center;
+
+// Text Indent
+@base_text_indent:                2em;
+@footnote_list_indent:            1.5em; // Used for list indentation
+@toc_indent_unit:                 24px;   // Used for list indentation
+@Admonition_text_indent:          0em;
+
+// Letter/Word Spacing
+@base_letter_spacing:             normal;
+@base_word_spacing:               normal;
+@toc_prefix_spacing:              0.5em;  // Spacing for TOC prefixes
+
+// Text Decoration
+@base_text_decoration:            none;
+@strike_decoration:               line-through wavy @strike_color; // Use the dark-mode adjusted strike_color
+
+/* ========================================================================== */
+/*                      控制显示与溢出 (display, overflow)                    */
+/* ========================================================================== */
+@base_overflow_mode:              overflow-x auto;
+@image_display:                   block;
+
+/* ========================================================================== */
+/*                      控制效果 (box-shadow, transition, opacity)           */
+/* ========================================================================== */
+// Box Shadow
+@base_box_shadow:                 none;
+@link_focus_box_shadow:           0 0 0 2px fade(@link_font_color_focus, 50%); // Adjusted alpha for dark bg
+
+// Transition
+@layout_transition:               all 0.3s ease;
+
+// Opacity
+@footnote_backref_opacity:        0.6;
+@footnote_backref_hover_opacity:  1;
+
+/* ========================================================================== */
+/*                      控制内容 (content - for pseudo-elements)             */
+/* ========================================================================== */
+// Admonition Icons (used as content for pseudo-elements)
+@Admonition_content_note:         "📝";
+@Admonition_content_abstract:     "📄";
+@Admonition_content_info:         "ℹ️";
+@Admonition_content_tip:          "💡";
+@Admonition_content_success:      "✅";
+@Admonition_content_question:     "❓";
+@Admonition_content_warning:      "⚠️";
+@Admonition_content_caution:      "🚧";
+@Admonition_content_attention:    "📣";
+@Admonition_content_failure:      "❌";
+@Admonition_content_danger:       "🔥";
+@Admonition_content_bug:          "🐞";
+@Admonition_content_example:      "🧪";
+@Admonition_content_quote:        "💬";
+
+/* ========================================================================== */
+/*                      控制其他 (Miscellaneous/Specific)                     */
+/* ========================================================================== */
+@link_focus_outline_offset:       2px;
+@list_padding_left:2em;

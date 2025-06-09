@@ -1,0 +1,209 @@
+/* ================================== 标题编号 ================================== */
+body {
+    counter-reset: h2-chap-counter;
+    h1 {counter-reset: h2-chap-counter;
+        &::before {content: "";margin-right: 0;}}
+    h2 {counter-increment: h2-chap-counter;counter-reset: h3-sec-counter;
+        &::before {content:"第 " counter(h2-chap-counter) " 章";}}
+    h3 {counter-increment: h3-sec-counter;counter-reset: h4-subsec-counter;
+        &::before {content: counter(h2-chap-counter) "." counter(h3-sec-counter);}}
+    h4 {counter-increment: h4-subsec-counter;counter-reset: h5-subsubsec-counter;
+        &::before {content: counter(h2-chap-counter) "." counter(h3-sec-counter) "." counter(h4-subsec-counter);}}
+    h5 {counter-increment: h5-subsubsec-counter;
+        &::before {content: counter(h2-chap-counter) "." counter(h3-sec-counter) "." counter(h4-subsec-counter) "." counter(h5-subsubsec-counter);}}
+    h2, h3, h4, h5{&::before{font-family: @title_font; font-weight: bold;margin-right: 0.5em;color:@title_color}}
+}
+
+/* ================================== 目录缩进 ================================== */
+
+/* ================================ 1.2 目录缩进 ================================ */
+
+.md-sidebar-toc details{
+        margin: 0em !important;
+        padding: 0em !important;
+}
+
+.md-toc details{
+    margin: 0em !important;
+    padding: 0em !important;
+}
+div.md-toc-link-wrapper{
+        margin: 0em !important;
+        padding:0em !important;
+}
+
+// 取消原有样式防止干扰
+details,
+summary,
+div.md-toc-link-wrapper {
+    list-style: none !important;     // ✅ 取消浏览器默认的项目符号
+    display: block !important;       // ✅ 不要再是 list-item
+    position: relative;
+}
+// 设置目录字体
+
+.md-toc {
+    background-color: @toc_bg_color;
+    border: @toc_border;
+    margin: @toc_margin;
+    padding-top: 1em;
+    padding-bottom: 1em !important;
+    line-height: @toc_line_height;
+    display: block;
+}
+
+.md-toc p{
+    font-family: @toc_font !important;
+    font-size:@toc_font_size !important;
+    font-weight:bold !important;
+    color: @toc_color;
+    display: block;
+    text-indent: 0em !important;
+}
+
+div.md-toc-link-wrapper,
+summary.md-toc-link-wrapper {
+    cursor: pointer;                // 更改鼠标指针为手型，表示可点击
+    display: block;
+}
+.md-toc summary.md-toc-link-wrapper::before {
+    content: "▸"; // 添加一个箭头图标
+    display: inline-block;
+    color: @toc_icon_color;
+    width: 1em;
+    transition: transform 0.2s ease-in-out;   // ✅ 添加过渡动画
+}
+details[open] > summary.md-toc-link-wrapper::before {
+    content: "▾";
+    color: @toc_icon_color;
+    width: 1em;
+}
+.md-toc div.md-toc-link-wrapper::before {
+    content: "▪";
+    color: @toc_icon_color;
+    display: inline-block;
+    width: 1em;
+}
+
+
+.toc-item-prefix-style() {
+    margin-right: 0.5em; // Adds space after the number/prefix
+}
+
+.md-toc {
+    // 增加目录字样
+    &::before {content: "目录（Table of Content）";display: block;
+        text-indent: 2em;
+        font-weight: bold;
+        font-size: @toc_title_font_size;
+        margin-bottom: 1em;
+        margin-top:2em;
+        list-style: none !important;
+        color:@toc_color;
+    }
+    /* H1 对应目录项隐藏 */
+    > details > summary.md-toc-link-wrapper {
+        display: none !important;
+    }
+}
+/* =================================== 编号 =================================== */
+.md-toc {
+    counter-reset: toc-l1 toc-l2 toc-l3 toc-l4;
+    // L1 (例如 "题目" 下的第一级，我们将视其为 "章")
+    & > details > div > details,
+    & > details > div > div.md-toc-link-wrapper { // 如果L1也可能是div
+        counter-increment: toc-l1;
+        counter-reset: toc-l2 toc-l3 toc-l4; // 重置其下所有子级计数器
+
+        & > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+        & > a.md-toc-link > p::before { // 适用于 div.md-toc-link-wrapper
+            content: "第 " counter(toc-l1) " 章 ";
+        }
+
+        // L2 (例如 "2级标题" 的 <details>)
+        & > div > details,
+        & > div > div.md-toc-link-wrapper {
+            counter-increment: toc-l2;
+            counter-reset: toc-l3 toc-l4;
+
+            & > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+            & > a.md-toc-link > p::before {
+                content: counter(toc-l1) "." counter(toc-l2) " ";
+                padding-left: 24px !important;
+            }
+
+            // L3 (例如 "3级标题" 的 <details>)
+            & > div > details,
+            & > div > div.md-toc-link-wrapper {
+                counter-increment: toc-l3;
+                counter-reset: toc-l4;
+
+                & > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+                & > a.md-toc-link > p::before {
+                    content: counter(toc-l1) "." counter(toc-l2) "." counter(toc-l3) " ";
+                    padding-left: 48px !important;
+                }
+
+                // L4 (例如 "4级标题" 的 <div>)
+                & > div > details, // 如果L4也可能是details
+                & > div > div.md-toc-link-wrapper { // 对应你的4级标题HTML
+                    counter-increment: toc-l4;
+                    // L4是最后一级，不需要 counter-reset 下一级
+                    & > summary.md-toc-link-wrapper > a.md-toc-link > p::before, // 如果L4是details
+                    & > a.md-toc-link > p::before { // 如果L4是div
+                        content: counter(toc-l1) "." counter(toc-l2) "." counter(toc-l3) "." counter(toc-l4) " ";
+                        padding-left: 72px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =================================== 侧边栏 ================================== */
+
+.md-sidebar-toc{
+    width: 400px !important;
+    border: none !important;
+    background-color: @sidebar_bg_color !important;
+}
+
+.md-sidebar-toc .md-toc{
+    border: none !important;
+    background-color: inherit;
+
+    &::before {
+        content: "目录";display: block;text-align: center;
+        font-weight: bold;
+        font-size: @sidebar_toc_title_size;
+        margin-bottom: 1em;
+        margin-top:2em;
+        list-style: none !important;
+        color:@sidebar_text_color;
+    }
+}
+
+.md-sidebar-toc .md-toc p{
+    font-size: 14px;
+    color: @sidebar_text_color;
+    font-weight: normal;
+}
+
+.md-sidebar-toc .md-toc summary.md-toc-link-wrapper::before {
+    content: "▸"; // 添加一个箭头图标
+    display: inline-block;
+    color:  @sidebar_text_color;
+    width: 1em;
+    transition: transform 0.2s ease-in-out;   // ✅ 添加过渡动画
+}
+.md-sidebar-toc details[open] > summary.md-toc-link-wrapper::before {
+    content: "▾";
+    color: @sidebar_text_color;
+    width: 1em;
+}
+.md-sidebar-toc .md-toc div.md-toc-link-wrapper::before {
+    content: "▪";
+    color: @sidebar_icon_color;
+    display: inline-block;
+    width: 1em;
+}

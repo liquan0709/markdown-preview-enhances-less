@@ -1,0 +1,1170 @@
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+/* ============================== 样式导入 ============================== */
+/* ========================================================================== */
+/*                                  字体导入 (Font Imports)                   */
+/* ========================================================================== */
+@import url("https://fontsapi.zeoseven.com/2/main/result.css");
+@import url("https://fontsapi.zeoseven.com/185/main/result.css");
+@import url("https://fontsapi.zeoseven.com/94/main/result.css");
+@import url("https://fontsapi.zeoseven.com/488/main/result.css");
+@import url("https://fontsapi.zeoseven.com/442/main/result.css");
+@import url("https://fontsapi.zeoseven.com/22/main/result.css");
+/* ========================================================================== */
+/*                      控制字体族 (font-family)                               */
+/* ========================================================================== */
+/* ========================================================================== */
+/*                      控制字号 (font-size)                                 */
+/* ========================================================================== */
+/* ========================================================================== */
+/*                      控制字重 (font-weight)                               */
+/* ========================================================================== */
+/* ========================================================================== */
+/*                      控制行高 (line-height)                               */
+/* ========================================================================== */
+/* ========================================================================== */
+/*                      控制文本颜色 (color)                                 */
+/* ========================================================================== */
+/* ========================================================================== */
+/*                      控制背景颜色 (background-color)                       */
+/* ========================================================================== */
+/* ========================================================================== */
+/*                      控制内边距 (padding)                                 */
+/* ========================================================================== */
+/* ========================================================================== */
+/*                      控制外边距 (margin)                                  */
+/* ========================================================================== */
+/* ========================================================================== */
+/*                      控制边框 (border, border-radius, border-color)         */
+/* ========================================================================== */
+/* ========================================================================== */
+/*                      控制尺寸 (width, height, max-width, min-width)       */
+/* ========================================================================== */
+/* ========================================================================== */
+/*                      控制文本排版 (text-align, text-indent, etc.)           */
+/* ========================================================================== */
+/* ========================================================================== */
+/*                      控制显示与溢出 (display, overflow)                    */
+/* ========================================================================== */
+/* ========================================================================== */
+/*                      控制效果 (box-shadow, transition, opacity)           */
+/* ========================================================================== */
+/* ========================================================================== */
+/*                      控制内容 (content - for pseudo-elements)             */
+/* ========================================================================== */
+/* ========================================================================== */
+/*                      控制其他 (Miscellaneous/Specific)                     */
+/* ========================================================================== */
+/* ========================================================================== */
+/*                                  非 MPE 渲染区                                 */
+/* ========================================================================== */
+html,
+body {
+  background-color: #FFF7E8 !important;
+  justify-content: center !important;
+  display: flex !important;
+  margin: 3em auto 2em auto;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  margin: 0;
+}
+.crossnote.markdown-preview.fixed.top-0.left-0,
+.crossnote.markdown-preview.hidden-preview.invisible {
+  display: none !important;
+}
+/* ========================================================================== */
+/*                            MPE 渲染区域样式                                 */
+/* ========================================================================== */
+.markdown-preview.markdown-preview {
+  /* ====================== 1 基础样式 ====================== */
+  background-color: #F2E9E4;
+  min-height: 100vh;
+  box-sizing: border-box;
+  max-width: 800px;
+  min-width: 600px;
+  margin: 3em auto 2em auto !important;
+  padding: 2em 3em 2em 3em !important;
+  position: relative !important;
+  left: auto !important;
+  transform: none !important;
+  scroll-behavior: smooth;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* ====================== 2 基础段落 ====================== */
+  /* ====================== 3 标题 ====================== */
+  /* ============================ 4 代码 ============================== */
+  /* ==== 行内代码: <p>段落中的<code>行内代码</code> ==== */
+  /* ============================== Todo 6 公式 ============================== */
+  /* === 行内公式 === */
+  /* === 块级公式样式（MathJax）=== */
+  /* ============================== Todo 7 表格 ============================== */
+  /* === 表格基础样式 === */
+  /* === 表头样式 === */
+  /* === 表体样式 === */
+  /* === 表体最后一行（第三线） === */
+  /* ============================== Todo 8 列表 ============================== */
+  /* ============================== Todo 9 图片 ============================== */
+  /* ============================== Todo 10 Admonition ============================== */
+  /* ======================== Mixin 定义：为不同类型生成样式 ======================== */
+  /* =================================== 提示块 批量生成样式 ================================== */
+  /* ============================== Todo 11 脚注 ============================== */
+  /* ===== 脚注整体容器及所有子元素统一字体和颜色 ===== */
+  /* ===== 脚注容器本身样式 ===== */
+  /* ===== 脚注编号列表（ol） ===== */
+  /* ===== 脚注条目之间的间距 ===== */
+  /* ===== 脚注回跳链接（↩︎）样式 ===== */
+  /* ===== 悬停时的回跳链接样式 ===== */
+  /* ============================== Todo 14 补充 ============================== */
+  /* 粗体 strong */
+  /* 斜体 em */
+  /* 删除线 s 或 del */
+  /* 高亮 mark (MPE 支持 ==高亮== 转 mark) */
+  /* =================================== 分割线 ================================== */
+  /* =================================== 引用 =================================== */
+}
+.markdown-preview.markdown-preview p {
+  font-family: 'LXGW Neo ZhiSong';
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.6;
+  text-indent: 2em;
+  margin: 0.5em 0;
+  color: #3A3A3A;
+  text-align: justify;
+  letter-spacing: normal;
+  word-spacing: normal;
+  overflow-wrap: break-word;
+}
+.markdown-preview.markdown-preview h1,
+.markdown-preview.markdown-preview h2,
+.markdown-preview.markdown-preview h3,
+.markdown-preview.markdown-preview h4,
+.markdown-preview.markdown-preview h5 {
+  font-family: "LXGW 975 Gothic";
+  font-weight: bold;
+  color: #264E70;
+  line-height: 1.4;
+  margin: 1.5em 0;
+}
+.markdown-preview.markdown-preview h1 {
+  font-size: 28px;
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+.markdown-preview.markdown-preview h2 {
+  font-size: 24px;
+}
+.markdown-preview.markdown-preview h3 {
+  font-size: 20px;
+}
+.markdown-preview.markdown-preview h4 {
+  font-size: 18px;
+}
+.markdown-preview.markdown-preview h5 {
+  font-size: 16px;
+}
+.markdown-preview.markdown-preview p code {
+  font-family: "Maple Mono NF CN", "LXGW WenKai Mono GB";
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.6;
+  background-color: #F2F2F2;
+  color: #4A4A4A;
+  border-radius: 4px;
+  padding: 0.2px 0.2px;
+  white-space: nowrap;
+}
+.markdown-preview.markdown-preview pre[data-role="codeBlock"] {
+  font-family: "Maple Mono NF CN", "LXGW WenKai Mono GB";
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.4;
+  color: #4A4A4A;
+  background-color: #F2F2F2;
+  border-radius: 4px;
+  padding: 0.8em 0em 0.8em 3em;
+  overflow-x: auto;
+  position: relative;
+  white-space: pre;
+}
+.markdown-preview.markdown-preview pre[data-role="codeBlock"] code {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  background: none;
+  margin: 0;
+  white-space: inherit;
+}
+.markdown-preview.markdown-preview .line-numbers .line-numbers-rows {
+  position: absolute;
+  top: 0.8em;
+  left: 0;
+  width: 2.5em;
+  user-select: none;
+  pointer-events: none;
+  border-right: 1px solid #131212;
+}
+.markdown-preview.markdown-preview .line-numbers .line-numbers-rows > span::before {
+  display: block;
+  text-align: left;
+  padding-left: 0.8em;
+  font-family: "Maple Mono NF CN", "LXGW WenKai Mono GB";
+  font-size: 14px;
+  line-height: 1.4;
+  color: #888888;
+}
+.markdown-preview.markdown-preview span.mathjax-exps {
+  font-family: "Libertinus Math";
+  font-size: 14px !important;
+  line-height: 1.6;
+  text-indent: 0em;
+  color: #333333;
+  background-color: #FAFAFA;
+  padding: 0.2px 0.2px;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  word-spacing: 0;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+.markdown-preview.markdown-preview mjx-container[jax="CHTML"][display="true"] {
+  font-family: "Libertinus Math";
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333333;
+  background-color: #FAFAFA;
+  padding: 0.8em 1em;
+  margin: 1.5em auto;
+  border-radius: 4px;
+  text-align: center;
+  display: block;
+  overflow-x: visible;
+  box-sizing: border-box;
+}
+.markdown-preview.markdown-preview table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5em 0;
+  text-align: center;
+  border-spacing: 0;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  justify-self: center;
+}
+.markdown-preview.markdown-preview table thead tr th {
+  font-family: "LXGW 975 Gothic";
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 6px 6px;
+  border-top: 2px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
+  border-left: none;
+  border-right: none;
+  background-color: #F3ECE7;
+  color: #2B2B2B;
+  word-wrap: break-word;
+}
+.markdown-preview.markdown-preview table tbody tr td {
+  font-family: 'LXGW Neo ZhiSong';
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2;
+  background-color: #FFFFFF;
+  color: #3A3A3A;
+  padding: 6px 6px;
+  border: none;
+}
+.markdown-preview.markdown-preview table tbody tr:last-child td {
+  border-bottom: 2px solid #CCCCCC !important;
+}
+.markdown-preview.markdown-preview li {
+  margin-bottom: 0.4em;
+  /* 列表项之间的垂直间距 */
+  font-family: "STDongGuanTi" !important;
+  line-height: 1.5;
+  color: #444444;
+}
+.markdown-preview.markdown-preview ol,
+.markdown-preview.markdown-preview ul {
+  padding-left: 2em !important;
+}
+.markdown-preview.markdown-preview ol > li,
+.markdown-preview.markdown-preview ul > li {
+  font-size: 14px;
+}
+.markdown-preview.markdown-preview ol > li > ol,
+.markdown-preview.markdown-preview ol > li > ul,
+.markdown-preview.markdown-preview ul > li > ol,
+.markdown-preview.markdown-preview ul > li > ul {
+  padding-left: 3em;
+}
+.markdown-preview.markdown-preview ol > li > ol > li,
+.markdown-preview.markdown-preview ol > li > ul > li,
+.markdown-preview.markdown-preview ul > li > ol > li,
+.markdown-preview.markdown-preview ul > li > ul > li {
+  font-size: 13px;
+}
+.markdown-preview.markdown-preview ol > li > ol > li > ol,
+.markdown-preview.markdown-preview ol > li > ol > li > ul,
+.markdown-preview.markdown-preview ol > li > ul > li > ol,
+.markdown-preview.markdown-preview ol > li > ul > li > ul,
+.markdown-preview.markdown-preview ul > li > ol > li > ol,
+.markdown-preview.markdown-preview ul > li > ol > li > ul,
+.markdown-preview.markdown-preview ul > li > ul > li > ol,
+.markdown-preview.markdown-preview ul > li > ul > li > ul {
+  padding-left: 4em;
+}
+.markdown-preview.markdown-preview ol > li > ol > li > ol > li,
+.markdown-preview.markdown-preview ol > li > ol > li > ul > li,
+.markdown-preview.markdown-preview ol > li > ul > li > ol > li,
+.markdown-preview.markdown-preview ol > li > ul > li > ul > li,
+.markdown-preview.markdown-preview ul > li > ol > li > ol > li,
+.markdown-preview.markdown-preview ul > li > ol > li > ul > li,
+.markdown-preview.markdown-preview ul > li > ul > li > ol > li,
+.markdown-preview.markdown-preview ul > li > ul > li > ul > li {
+  font-size: 12px;
+}
+.markdown-preview.markdown-preview figure {
+  margin: 1.5em 0;
+  text-align: center;
+}
+.markdown-preview.markdown-preview figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.markdown-preview.markdown-preview figure figcaption {
+  font-family: "LXGW 975 Gothic";
+  font-size: 16px;
+  color: #666666;
+  line-height: 1.6;
+  background-color: transparent;
+  display: inline-block;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 0.5em;
+  padding: 0.5em 1em;
+  text-align: center;
+}
+.markdown-preview.markdown-preview .admonition {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 6px;
+  margin: 0.5em 0 1em 0;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+.markdown-preview.markdown-preview .admonition .admonition-title {
+  font-family: "LXGW 975 Gothic";
+  font-weight: bold;
+  text-indent: 0em;
+  padding: 0.5em 0.5em;
+  padding-left: 5em;
+  font-size: 14px;
+  line-height: 1.3;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.markdown-preview.markdown-preview .admonition .admonition-title::before {
+  content: "";
+  font-size: inherit;
+  line-height: inherit;
+  font-family: "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+  position: absolute;
+  left: 0.8em;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+.markdown-preview.markdown-preview .admonition p {
+  font-family: 'LXGW Neo ZhiSong';
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.2;
+  text-indent: 0em;
+  padding: 1em;
+  margin: 0;
+}
+.markdown-preview.markdown-preview .admonition p:first-child {
+  margin-top: 0;
+}
+.markdown-preview.markdown-preview .admonition p:last-child {
+  margin-bottom: 0;
+}
+.markdown-preview.markdown-preview .admonition.note {
+  border-left: 5px solid #A3AAB3 !important;
+}
+.markdown-preview.markdown-preview .admonition.note > .admonition-title {
+  color: #ffffff !important;
+  background-color: #A3AAB3 !important;
+}
+.markdown-preview.markdown-preview .admonition.note > .admonition-title::before {
+  content: "📝";
+  margin-right: 0.5em;
+  padding-left: 1em;
+}
+.markdown-preview.markdown-preview .admonition.note > *:not(.admonition-title) {
+  color: #87909c !important;
+  background-color: #ffffff !important;
+  padding: 0.8em 1em;
+  margin: 0;
+}
+.markdown-preview.markdown-preview .admonition.abstract {
+  border-left: 5px solid #9F60FF !important;
+}
+.markdown-preview.markdown-preview .admonition.abstract > .admonition-title {
+  color: #ffffff !important;
+  background-color: #9F60FF !important;
+}
+.markdown-preview.markdown-preview .admonition.abstract > .admonition-title::before {
+  content: "📄";
+  margin-right: 0.5em;
+  padding-left: 1em;
+}
+.markdown-preview.markdown-preview .admonition.abstract > *:not(.admonition-title) {
+  color: #802dff !important;
+  background-color: #ffffff !important;
+  padding: 0.8em 1em;
+  margin: 0;
+}
+.markdown-preview.markdown-preview .admonition.info {
+  border-left: 5px solid #3DB8EA !important;
+}
+.markdown-preview.markdown-preview .admonition.info > .admonition-title {
+  color: #f5fbfe !important;
+  background-color: #3DB8EA !important;
+}
+.markdown-preview.markdown-preview .admonition.info > .admonition-title::before {
+  content: "ℹ️";
+  margin-right: 0.5em;
+  padding-left: 1em;
+}
+.markdown-preview.markdown-preview .admonition.info > *:not(.admonition-title) {
+  color: #18a3dc !important;
+  background-color: #f5fbfe !important;
+  padding: 0.8em 1em;
+  margin: 0;
+}
+.markdown-preview.markdown-preview .admonition.tip {
+  border-left: 5px solid #3CCF91 !important;
+}
+.markdown-preview.markdown-preview .admonition.tip > .admonition-title {
+  color: #e0f7ed !important;
+  background-color: #3CCF91 !important;
+}
+.markdown-preview.markdown-preview .admonition.tip > .admonition-title::before {
+  content: "💡";
+  margin-right: 0.5em;
+  padding-left: 1em;
+}
+.markdown-preview.markdown-preview .admonition.tip > *:not(.admonition-title) {
+  color: #2bad76 !important;
+  background-color: #e0f7ed !important;
+  padding: 0.8em 1em;
+  margin: 0;
+}
+.markdown-preview.markdown-preview .admonition.success {
+  border-left: 5px solid #48D774 !important;
+}
+.markdown-preview.markdown-preview .admonition.success > .admonition-title {
+  color: #effcf3 !important;
+  background-color: #48D774 !important;
+}
+.markdown-preview.markdown-preview .admonition.success > .admonition-title::before {
+  content: "✅";
+  margin-right: 0.5em;
+  padding-left: 1em;
+}
+.markdown-preview.markdown-preview .admonition.success > *:not(.admonition-title) {
+  color: #2ac259 !important;
+  background-color: #effcf3 !important;
+  padding: 0.8em 1em;
+  margin: 0;
+}
+.markdown-preview.markdown-preview .admonition.question {
+  border-left: 5px solid #A58FFF !important;
+}
+.markdown-preview.markdown-preview .admonition.question > .admonition-title {
+  color: #ffffff !important;
+  background-color: #A58FFF !important;
+}
+.markdown-preview.markdown-preview .admonition.question > .admonition-title::before {
+  content: "❓";
+  margin-right: 0.5em;
+  padding-left: 1em;
+}
+.markdown-preview.markdown-preview .admonition.question > *:not(.admonition-title) {
+  color: #7c5cff !important;
+  background-color: #ffffff !important;
+  padding: 0.8em 1em;
+  margin: 0;
+}
+.markdown-preview.markdown-preview .admonition.warning {
+  border-left: 5px solid #F7B84B !important;
+}
+.markdown-preview.markdown-preview .admonition.warning > .admonition-title {
+  color: #ffffff !important;
+  background-color: #F7B84B !important;
+}
+.markdown-preview.markdown-preview .admonition.warning > .admonition-title::before {
+  content: "⚠️";
+  margin-right: 0.5em;
+  padding-left: 1em;
+}
+.markdown-preview.markdown-preview .admonition.warning > *:not(.admonition-title) {
+  color: #f5a51a !important;
+  background-color: #ffffff !important;
+  padding: 0.8em 1em;
+  margin: 0;
+}
+.markdown-preview.markdown-preview .admonition.caution {
+  border-left: 5px solid #F89D54 !important;
+}
+.markdown-preview.markdown-preview .admonition.caution > .admonition-title {
+  color: #ffffff !important;
+  background-color: #F89D54 !important;
+}
+.markdown-preview.markdown-preview .admonition.caution > .admonition-title::before {
+  content: "🚧";
+  margin-right: 0.5em;
+  padding-left: 1em;
+}
+.markdown-preview.markdown-preview .admonition.caution > *:not(.admonition-title) {
+  color: #f68123 !important;
+  background-color: #ffffff !important;
+  padding: 0.8em 1em;
+  margin: 0;
+}
+.markdown-preview.markdown-preview .admonition.attention {
+  border-left: 5px solid #F2864B !important;
+}
+.markdown-preview.markdown-preview .admonition.attention > .admonition-title {
+  color: #ffffff !important;
+  background-color: #F2864B !important;
+}
+.markdown-preview.markdown-preview .admonition.attention > .admonition-title::before {
+  content: "📣";
+  margin-right: 0.5em;
+  padding-left: 1em;
+}
+.markdown-preview.markdown-preview .admonition.attention > *:not(.admonition-title) {
+  color: #ef661b !important;
+  background-color: #ffffff !important;
+  padding: 0.8em 1em;
+  margin: 0;
+}
+.markdown-preview.markdown-preview .admonition.failure {
+  border-left: 5px solid #ED5D5D !important;
+}
+.markdown-preview.markdown-preview .admonition.failure > .admonition-title {
+  color: #ffffff !important;
+  background-color: #ED5D5D !important;
+}
+.markdown-preview.markdown-preview .admonition.failure > .admonition-title::before {
+  content: "❌";
+  margin-right: 0.5em;
+  padding-left: 1em;
+}
+.markdown-preview.markdown-preview .admonition.failure > *:not(.admonition-title) {
+  color: #e82f2f !important;
+  background-color: #ffffff !important;
+  padding: 0.8em 1em;
+  margin: 0;
+}
+.markdown-preview.markdown-preview .admonition.danger {
+  border-left: 5px solid #D94141 !important;
+}
+.markdown-preview.markdown-preview .admonition.danger > .admonition-title {
+  color: #fbebeb !important;
+  background-color: #D94141 !important;
+}
+.markdown-preview.markdown-preview .admonition.danger > .admonition-title::before {
+  content: "🔥";
+  margin-right: 0.5em;
+  padding-left: 1em;
+}
+.markdown-preview.markdown-preview .admonition.danger > *:not(.admonition-title) {
+  color: #c12727 !important;
+  background-color: #fbebeb !important;
+  padding: 0.8em 1em;
+  margin: 0;
+}
+.markdown-preview.markdown-preview .admonition.bug {
+  border-left: 5px solid #D14D83 !important;
+}
+.markdown-preview.markdown-preview .admonition.bug > .admonition-title {
+  color: #fbeff4 !important;
+  background-color: #D14D83 !important;
+}
+.markdown-preview.markdown-preview .admonition.bug > .admonition-title::before {
+  content: "🐞";
+  margin-right: 0.5em;
+  padding-left: 1em;
+}
+.markdown-preview.markdown-preview .admonition.bug > *:not(.admonition-title) {
+  color: #bb3069 !important;
+  background-color: #fbeff4 !important;
+  padding: 0.8em 1em;
+  margin: 0;
+}
+.markdown-preview.markdown-preview .admonition.example {
+  border-left: 5px solid #5CAEFF !important;
+}
+.markdown-preview.markdown-preview .admonition.example > .admonition-title {
+  color: #ffffff !important;
+  background-color: #5CAEFF !important;
+}
+.markdown-preview.markdown-preview .admonition.example > .admonition-title::before {
+  content: "🧪";
+  margin-right: 0.5em;
+  padding-left: 1em;
+}
+.markdown-preview.markdown-preview .admonition.example > *:not(.admonition-title) {
+  color: #2995ff !important;
+  background-color: #ffffff !important;
+  padding: 0.8em 1em;
+  margin: 0;
+}
+.markdown-preview.markdown-preview .admonition.quote {
+  border-left: 5px solid #A0A8B0 !important;
+}
+.markdown-preview.markdown-preview .admonition.quote > .admonition-title {
+  color: #ffffff !important;
+  background-color: #A0A8B0 !important;
+}
+.markdown-preview.markdown-preview .admonition.quote > .admonition-title::before {
+  content: "💬";
+  margin-right: 0.5em;
+  padding-left: 1em;
+}
+.markdown-preview.markdown-preview .admonition.quote > *:not(.admonition-title) {
+  color: #848f99 !important;
+  background-color: #ffffff !important;
+  padding: 0.8em 1em;
+  margin: 0;
+}
+.markdown-preview.markdown-preview .footnotes,
+.markdown-preview.markdown-preview .footnotes * {
+  font-family: "STDongGuanTi";
+  font-size: 14px;
+  line-height: 1.5;
+  color: #5A5A5A;
+  text-indent: 0em !important;
+}
+.markdown-preview.markdown-preview .footnotes {
+  margin-top: 0em;
+  padding: 0;
+}
+.markdown-preview.markdown-preview .footnotes-list {
+  list-style-type: decimal;
+  margin-left: 1.5em;
+  padding-left: 0;
+}
+.markdown-preview.markdown-preview .footnote-item {
+  margin-bottom: 0.6em;
+}
+.markdown-preview.markdown-preview .footnote-backref {
+  font-size: 14px !important;
+  margin-left: 0.5em;
+  color: #8A8A8A !important;
+  text-decoration: none;
+  vertical-align: baseline;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.markdown-preview.markdown-preview .footnote-backref:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+.markdown-preview.markdown-preview strong {
+  color: #862020;
+  font-weight: bold;
+  padding: 0 2px;
+  text-indent: 0em !important;
+}
+.markdown-preview.markdown-preview em {
+  color: #2E5C8A;
+  font-style: italic;
+  padding: 0 2px;
+  text-indent: 0em !important;
+}
+.markdown-preview.markdown-preview s,
+.markdown-preview.markdown-preview del {
+  color: #AAAAAA;
+  text-decoration: line-through wavy red;
+  text-indent: 0em !important;
+}
+.markdown-preview.markdown-preview mark {
+  background-color: #FFF8C5;
+  color: #000000;
+  padding: 0 2px;
+  text-indent: 0em !important;
+}
+.markdown-preview.markdown-preview hr:not(.footnotes-sep) {
+  color: #3A3A3A;
+  border: double;
+  border-width: 3px 5px;
+  border-left: none;
+  border-right: none;
+  height: 1px;
+  overflow: visible;
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  background-color: transparent;
+}
+.markdown-preview.markdown-preview hr:not(.footnotes-sep):before,
+.markdown-preview.markdown-preview hr:not(.footnotes-sep):after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-width: 0 3px 3px 0;
+  border-style: double;
+  top: -3px;
+  background: radial-gradient(2px at 1px 1px, currentColor 2px, transparent 0) no-repeat;
+}
+.markdown-preview.markdown-preview hr:not(.footnotes-sep):before {
+  transform: rotate(-45deg);
+  left: -20px;
+}
+.markdown-preview.markdown-preview hr:not(.footnotes-sep):after {
+  transform: rotate(135deg);
+  right: -20px;
+}
+.markdown-preview.markdown-preview hr.footnotes-sep {
+  border-top: 1px solid #B95A5A;
+  color: #B95A5A;
+}
+.markdown-preview.markdown-preview blockquote {
+  margin: 1.5em 0 !important;
+  padding: 0.8em 1em 0.8em 1.5em !important;
+  border-radius: 4px !important;
+  background-color: #FFF0F0 !important;
+  font-family: "STDongGuanTi";
+  font-size: 14px;
+  color: #5A3E36;
+  line-height: 1.3;
+  white-space: normal;
+}
+.markdown-preview.markdown-preview blockquote p {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  border: none !important;
+  text-indent: 0em !important;
+  font-family: inherit !important;
+}
+/* =================================== 超链接 ================================== */
+a {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: #264E70;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+a:link {
+  color: #2962FF;
+}
+a:visited {
+  color: #7F8C8D;
+}
+a:hover {
+  color: #D35400;
+  text-decoration: underline;
+  background-color: rgba(166, 124, 0, 0.12);
+  border-radius: 4px;
+}
+a:active {
+  color: #C0392B;
+  text-decoration: underline;
+}
+a:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.4);
+  border-radius: 4px;
+}
+a:focus-visible {
+  outline: 2px dashed #3498DB;
+  outline-offset: 2px;
+}
+/* ================================== 标题编号 ================================== */
+body {
+  counter-reset: h2-chap-counter;
+}
+body h1 {
+  counter-reset: h2-chap-counter;
+}
+body h1::before {
+  content: "";
+  margin-right: 0;
+}
+body h2 {
+  counter-increment: h2-chap-counter;
+  counter-reset: h3-sec-counter;
+}
+body h2::before {
+  content: "第 " counter(h2-chap-counter) " 章";
+}
+body h3 {
+  counter-increment: h3-sec-counter;
+  counter-reset: h4-subsec-counter;
+}
+body h3::before {
+  content: counter(h2-chap-counter) "." counter(h3-sec-counter);
+}
+body h4 {
+  counter-increment: h4-subsec-counter;
+  counter-reset: h5-subsubsec-counter;
+}
+body h4::before {
+  content: counter(h2-chap-counter) "." counter(h3-sec-counter) "." counter(h4-subsec-counter);
+}
+body h5 {
+  counter-increment: h5-subsubsec-counter;
+}
+body h5::before {
+  content: counter(h2-chap-counter) "." counter(h3-sec-counter) "." counter(h4-subsec-counter) "." counter(h5-subsubsec-counter);
+}
+body h2::before,
+body h3::before,
+body h4::before,
+body h5::before {
+  font-family: "LXGW 975 Gothic";
+  font-weight: bold;
+  margin-right: 0.5em;
+  color: #264E70;
+}
+/* ================================== 目录缩进 ================================== */
+/* ================================ 1.2 目录缩进 ================================ */
+.md-sidebar-toc details {
+  margin: 0em !important;
+  padding: 0em !important;
+}
+.md-toc details {
+  margin: 0em !important;
+  padding: 0em !important;
+}
+div.md-toc-link-wrapper {
+  margin: 0em !important;
+  padding: 0em !important;
+}
+details,
+summary,
+div.md-toc-link-wrapper {
+  list-style: none !important;
+  display: block !important;
+  position: relative;
+}
+.md-toc {
+  background-color: #FFF7E8;
+  border: 1px solid #3A3A3A;
+  margin: 1.5em 0;
+  padding-top: 1em;
+  padding-bottom: 1em !important;
+  line-height: 1.4;
+  display: block;
+}
+.md-toc p {
+  font-family: 'LXGW Neo ZhiSong' !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  color: #264E70;
+  display: block;
+  text-indent: 0em !important;
+}
+div.md-toc-link-wrapper,
+summary.md-toc-link-wrapper {
+  cursor: pointer;
+  display: block;
+}
+.md-toc summary.md-toc-link-wrapper::before {
+  content: "▸";
+  display: inline-block;
+  color: #888888;
+  width: 1em;
+  transition: transform 0.2s ease-in-out;
+}
+details[open] > summary.md-toc-link-wrapper::before {
+  content: "▾";
+  color: #888888;
+  width: 1em;
+}
+.md-toc div.md-toc-link-wrapper::before {
+  content: "▪";
+  color: #888888;
+  display: inline-block;
+  width: 1em;
+}
+.md-toc {
+  /* H1 对应目录项隐藏 */
+}
+.md-toc::before {
+  content: "目录（Table of Content）";
+  display: block;
+  text-indent: 2em;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 1em;
+  margin-top: 2em;
+  list-style: none !important;
+  color: #264E70;
+}
+.md-toc > details > summary.md-toc-link-wrapper {
+  display: none !important;
+}
+/* =================================== 编号 =================================== */
+.md-toc {
+  counter-reset: toc-l1 toc-l2 toc-l3 toc-l4;
+}
+.md-toc > details > div > details,
+.md-toc > details > div > div.md-toc-link-wrapper {
+  counter-increment: toc-l1;
+  counter-reset: toc-l2 toc-l3 toc-l4;
+}
+.md-toc > details > div > details > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > a.md-toc-link > p::before {
+  content: "第 " counter(toc-l1) " 章 ";
+}
+.md-toc > details > div > details > div > details,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper {
+  counter-increment: toc-l2;
+  counter-reset: toc-l3 toc-l4;
+}
+.md-toc > details > div > details > div > details > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > details > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > a.md-toc-link > p::before {
+  content: counter(toc-l1) "." counter(toc-l2) " ";
+  padding-left: 24px !important;
+}
+.md-toc > details > div > details > div > details > div > details,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > details,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > details,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > details,
+.md-toc > details > div > details > div > details > div > div.md-toc-link-wrapper,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > div.md-toc-link-wrapper,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper {
+  counter-increment: toc-l3;
+  counter-reset: toc-l4;
+}
+.md-toc > details > div > details > div > details > div > details > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > details > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > details > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > details > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > details > div > div.md-toc-link-wrapper > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > div.md-toc-link-wrapper > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > details > div > details > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > details > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > details > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > details > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > details > div > div.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > div.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > a.md-toc-link > p::before {
+  content: counter(toc-l1) "." counter(toc-l2) "." counter(toc-l3) " ";
+  padding-left: 48px !important;
+}
+.md-toc > details > div > details > div > details > div > details > div > details,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > details > div > details,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > details > div > details,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > details > div > details,
+.md-toc > details > div > details > div > details > div > div.md-toc-link-wrapper > div > details,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > div.md-toc-link-wrapper > div > details,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > details,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > details,
+.md-toc > details > div > details > div > details > div > details > div > div.md-toc-link-wrapper,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > details > div > div.md-toc-link-wrapper,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > details > div > div.md-toc-link-wrapper,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > details > div > div.md-toc-link-wrapper,
+.md-toc > details > div > details > div > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper {
+  counter-increment: toc-l4;
+}
+.md-toc > details > div > details > div > details > div > details > div > details > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > details > div > details > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > details > div > details > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > details > div > details > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > details > div > div.md-toc-link-wrapper > div > details > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > div.md-toc-link-wrapper > div > details > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > details > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > details > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > details > div > details > div > div.md-toc-link-wrapper > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > details > div > div.md-toc-link-wrapper > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > details > div > div.md-toc-link-wrapper > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > details > div > div.md-toc-link-wrapper > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > summary.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > details > div > details > div > details > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > details > div > details > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > details > div > details > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > details > div > details > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > details > div > div.md-toc-link-wrapper > div > details > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > div.md-toc-link-wrapper > div > details > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > details > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > details > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > details > div > details > div > div.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > details > div > div.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > details > div > div.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > details > div > div.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > a.md-toc-link > p::before,
+.md-toc > details > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > div > div.md-toc-link-wrapper > a.md-toc-link > p::before {
+  content: counter(toc-l1) "." counter(toc-l2) "." counter(toc-l3) "." counter(toc-l4) " ";
+  padding-left: 72px !important;
+}
+/* =================================== 侧边栏 ================================== */
+.md-sidebar-toc {
+  width: 400px !important;
+  border: none !important;
+  background-color: #F3F0FF !important;
+}
+.md-sidebar-toc .md-toc {
+  border: none !important;
+  background-color: inherit;
+}
+.md-sidebar-toc .md-toc::before {
+  content: "目录";
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 1em;
+  margin-top: 2em;
+  list-style: none !important;
+  color: #444444;
+}
+.md-sidebar-toc .md-toc p {
+  font-size: 14px;
+  color: #444444;
+  font-weight: normal;
+}
+.md-sidebar-toc .md-toc summary.md-toc-link-wrapper::before {
+  content: "▸";
+  display: inline-block;
+  color: #444444;
+  width: 1em;
+  transition: transform 0.2s ease-in-out;
+}
+.md-sidebar-toc details[open] > summary.md-toc-link-wrapper::before {
+  content: "▾";
+  color: #444444;
+  width: 1em;
+}
+.md-sidebar-toc .md-toc div.md-toc-link-wrapper::before {
+  content: "▪";
+  color: #888888;
+  display: inline-block;
+  width: 1em;
+}
+/* ========================================================================== */
+/*                      打印特定样式 (Print Specific Styles)                   */
+/* ========================================================================== */
+@media print {
+  /* ========================================================================== */
+  /*                      控制字号 (font-size) - 打印 (pt)                     */
+  /* ========================================================================== */
+  /* ---- 应用这些变量的CSS规则 ---- */
+  body {
+    color: #000000;
+    background-color: #FFFFFF;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #000000;
+  }
+  a,
+  a:link,
+  a:visited {
+    color: #000000;
+    text-decoration: underline;
+    /* 打印时通常给链接加下划线 */
+  }
+  code,
+  pre {
+    background-color: transparent;
+    color: #000000;
+  }
+  .code-line-number {
+    color: #888888;
+  }
+  blockquote {
+    color: #333333;
+    background-color: transparent;
+  }
+  table {
+    border-color: #AAAAAA;
+  }
+  th {
+    background-color: transparent;
+    color: #000000;
+  }
+  td {
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+  mark {
+    background-color: transparent;
+    color: #000000;
+  }
+  hr {
+    border-top-color: #888888;
+    /* 取决于你的 hr_border 定义 */
+  }
+  /* 隐藏不需要打印的元素 */
+  nav,
+  footer,
+  .no-print,
+  .sidebar {
+    /* 假设侧边栏也不打印 */
+    display: none !important;
+  }
+  /* 确保图片不会溢出页面 */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}

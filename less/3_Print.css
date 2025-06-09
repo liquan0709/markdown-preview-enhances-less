@@ -1,0 +1,72 @@
+/* ========================================================================== */
+/*                      打印特定样式 (Print Specific Styles)                   */
+/* ========================================================================== */
+@media print {
+  /* ========================================================================== */
+  /*                      控制字号 (font-size) - 打印 (pt)                     */
+  /* ========================================================================== */
+  /* ---- 应用这些变量的CSS规则 ---- */
+  body {
+    color: #000000;
+    background-color: #FFFFFF;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #000000;
+  }
+  a,
+  a:link,
+  a:visited {
+    color: #000000;
+    text-decoration: underline;
+    /* 打印时通常给链接加下划线 */
+  }
+  code,
+  pre {
+    background-color: transparent;
+    color: #000000;
+  }
+  .code-line-number {
+    color: #888888;
+  }
+  blockquote {
+    color: #333333;
+    background-color: transparent;
+  }
+  table {
+    border-color: #AAAAAA;
+  }
+  th {
+    background-color: transparent;
+    color: #000000;
+  }
+  td {
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+  mark {
+    background-color: transparent;
+    color: #000000;
+  }
+  hr {
+    border-top-color: #888888;
+    /* 取决于你的 hr_border 定义 */
+  }
+  /* 隐藏不需要打印的元素 */
+  nav,
+  footer,
+  .no-print,
+  .sidebar {
+    /* 假设侧边栏也不打印 */
+    display: none !important;
+  }
+  /* 确保图片不会溢出页面 */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
